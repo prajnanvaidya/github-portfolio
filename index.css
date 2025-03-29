@@ -1,0 +1,248 @@
+/* Reset and base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    line-height: 1.6;
+    color: #333;
+    background: #f7f9fc;
+    padding-top: 80px; /* Space for fixed navbar */
+  }
+  
+  /* Navbar styling with second color scheme and reduced height */
+  .navbar {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    padding: 25px 30px; /* Reduced padding for a slightly lower height */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Navbar inner elements */
+  .navbar .logo h1 {
+    font-size: 24px;
+    line-height: 1;
+    margin: 0;
+  }
+  
+  /* Responsive navbar menu */
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .nav-menu li {
+    margin: 0 15px;
+  }
+  .nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    line-height: 1;
+  }
+  .nav-menu li a:hover,
+  .nav-menu li a.active {
+    color: #f39c12;
+  }
+  
+  /* Toggle button for mobile */
+  .nav-toggle {
+    display: none;
+  }
+  .nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: relative;
+  }
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: #fff;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+  .nav-toggle-label span {
+    top: 50%;
+  }
+  .nav-toggle-label span::before {
+    content: "";
+    top: -10px;
+  }
+  .nav-toggle-label span::after {
+    content: "";
+    top: 10px;
+  }
+  
+  /* Main content styling */
+  main {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  section {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+  }
+  h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+  
+  /* About section with profile image on top */
+  .about-content {
+    text-align: center;
+  }
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+    border: 3px solid #f39c12;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+  }
+  
+  /* Project section styling */
+  .project {
+    border-left: 5px solid #2c3e50;
+    padding-left: 15px;
+    margin-bottom: 30px;
+  }
+  .project h3 {
+    color: #2c3e50;
+  }
+  .more-details-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .more-details-btn:hover {
+    background: #f39c12;
+  }
+  .more-details {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: #f4f4f4;
+    border-left: 3px solid #f39c12;
+    border-radius: 5px;
+  }
+  .more-details p {
+    margin-bottom: 10px;
+  }
+  .more-details ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
+  
+  /* Skills section styling */
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .skills-list li {
+    background: #e1e8ed;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Style for skill logos */
+  .skill-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right: 5px;
+  }
+  
+  /* Contact styling */
+  #contact a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  #contact a:hover {
+    color: #f39c12;
+  }
+  
+  /* Footer styling */
+  footer {
+    text-align: center;
+    background: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 3px solid #f39c12;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .nav-menu {
+      flex-direction: column;
+      align-items: center;
+      display: none;
+    }
+    .nav-toggle {
+      display: block;
+    }
+    .nav-toggle-label {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+    .nav-menu li {
+      margin: 10px 0;
+    }
+    /* Show menu when checkbox is checked */
+    .nav-toggle:checked + .nav-toggle-label + .nav-menu {
+      display: flex;
+    }
+  }
+  
+
+  .resume-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .resume-btn:hover {
+    background: #f39c12;
+  }
+  
